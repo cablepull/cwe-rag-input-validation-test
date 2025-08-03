@@ -1,9 +1,9 @@
 import os
 from dotenv import load_dotenv
-from langchain.llms import OpenAI
+from langchain_openai import OpenAI
 from langchain.chains import RetrievalQA
-from langchain.vectorstores import Chroma
-from langchain.embeddings import OpenAIEmbeddings
+from langchain_chroma import Chroma
+from langchain_openai import OpenAIEmbeddings
 
 load_dotenv()
 
@@ -11,7 +11,7 @@ load_dotenv()
 def get_rag_chain():
     db = Chroma(
         embedding_function=OpenAIEmbeddings(openai_api_key=os.getenv("OPENAI_API_KEY")),
-        persist_directory="../db",
+        persist_directory="db",
     )
     qa_chain = RetrievalQA.from_chain_type(
         llm=OpenAI(openai_api_key=os.getenv("OPENAI_API_KEY")),
@@ -23,4 +23,8 @@ def get_rag_chain():
 
 def query_rag(text: str) -> str:
     chain = get_rag_chain()
-    return chain.run(text)
+    result = chain.invoke({"query": text})
+    print("[Retrieved Documents]")
+    for doc in result.get("source_documents", []):
+        print(f"- {doc.page_content}")
+    return result["result"]
