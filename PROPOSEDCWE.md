@@ -1,9 +1,9 @@
-# CWE Proposal: Use of Untrusted Input in RAG Prompt Construction
+# CWE Proposal: Improper Neutralization of Retrieved Content Used in AI Prompt Construction
 
 Submitted by Mehmet Yilmaz (cablepull)
 
 ## Name
-**Use of Untrusted Input in RAG Prompt Construction**
+**Improper Neutralization of Retrieved Content Used in AI Prompt Construction**
 
 ## Abstraction
 Base
