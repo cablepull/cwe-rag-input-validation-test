@@ -6,17 +6,23 @@ This repository demonstrates the vulnerability **Use of Untrusted Input in Retri
 - Python 3.8+
 - OpenAI API key
 
-Install dependencies:
+## Setup
+
+1. Install dependencies:
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Create a `.env` file and set the API key:
+2. Set up environment variables:
 ```bash
-OPENAI_API_KEY=sk-your-key
+# Copy the template and configure with your API key
+cp env_template.txt .env
+# Edit .env and replace with your actual OpenAI API key
 ```
+
+You can get your OpenAI API key from: https://platform.openai.com/api-keys
 
 ## Usage
 1. Ingest the documents into the vector store:
@@ -40,6 +46,7 @@ Test results will be printed to the console and stored in `test_outputs/logs.txt
 ├── data
 │   ├── clean_doc.txt
 │   └── poisoned_doc.txt
+├── env_template.txt
 ├── run_tests.sh
 └── requirements.txt
 ```

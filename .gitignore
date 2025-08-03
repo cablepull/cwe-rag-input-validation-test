@@ -1,6 +1,11 @@
 # Ignore environment files
 .env
 
+# Ignore virtual environment
+venv/
+env/
+.venv/
+
 # Ignore vector database and caches
 db/
 
