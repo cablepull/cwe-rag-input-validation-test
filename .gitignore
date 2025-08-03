@@ -1,0 +1,12 @@
+# Ignore environment files
+.env
+
+# Ignore vector database and caches
+db/
+
+# Ignore test outputs
+/test_outputs/*.txt
+
+# Python cache
+__pycache__/
+*.pyc
