@@ -1,0 +1,1 @@
+Users can update their email addresses from the account settings page.
