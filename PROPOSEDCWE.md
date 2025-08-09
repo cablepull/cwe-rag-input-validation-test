@@ -190,7 +190,7 @@ flowchart LR
     A[Connector Payload] --> B[Field Allowlist & Scope Check]
     B --> C[CDR: strip comments, hidden text, metadata]
     C --> D[Trust Tagging & Policy Filters]
-    D --> E["Neutralization Wrapper: fenced block plus no-exec"]
+    D --> E[Neutralization Wrapper: fenced block plus no-exec]
     E --> F[Context Assembler: immutable system layer protected]
     F --> G[LLM + Tool Gating + Output Validator]
 ```
